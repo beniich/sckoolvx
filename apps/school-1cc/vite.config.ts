@@ -9,6 +9,7 @@ const __dirname = dirname(__filename)
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: './', // Force relative paths
   server: {
     host: "0.0.0.0",
     port: 3005,
@@ -19,4 +20,8 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    outDir: "dist",
+    emptyOutDir: true,
+  }
 })
